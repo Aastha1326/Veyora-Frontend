@@ -1,0 +1,417 @@
+/* ---------------------------------------- */
+/* GLOBAL STYLES */
+/* ---------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap');
+
+:root {
+    --primary-dark: #0c0f17;
+    --gold-accent: #d8c27a;
+    --text-light: #f5e1a4;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --secondary-dark: #121620;
+    /* Used for subtle contrast */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+}
+
+/* ---------------------------------------- */
+/* NAVBAR */
+/* ---------------------------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: var(--primary-dark);
+    z-index: 10;
+    top: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--text-light);
+    /* Changed to text-light for initial visibility */
+    font-weight: 500;
+}
+
+.nav-links li:hover {
+    color: var(--gold-accent);
+}
+
+.login-btn {
+    padding: 8px 18px;
+    background: var(--gold-accent);
+    border-radius: 8px;
+    border: 1px solid var(--gold-accent);
+    color: var(--primary-dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.login-btn:hover {
+    background: #c3ad69;
+}
+
+/* ---------------------------------------- */
+/* HERO SECTION */
+/* ---------------------------------------- */
+.hero {
+    padding: 60px 50px 100px;
+    /* Soft navy gradient with subtle effect */
+    background: radial-gradient(circle at 50% 10%, #1c263c 0%, var(--primary-dark) 80%);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-height: 85vh;
+}
+
+.hero-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Vertically align items */
+    max-width: 1200px;
+    width: 100%;
+}
+
+.hero-left {
+    flex: 0.45;
+}
+
+.hero-title {
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--text-light);
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    /* Slightly larger for better readability */
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    max-width: 450px;
+    line-height: 1.5;
+}
+
+.cta-btn {
+    padding: 12px 25px;
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--gold-accent);
+    /* Gold outline */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: rgba(216, 194, 122, 0.1);
+}
+
+.plane-icon.top-left{
+    position: absolute;
+    top: 18%;
+    left: 8%;
+    width: 35px;
+    height: 35px;
+    color: var(--gold-accent);
+    opacity: 0.6;
+    transform: rotate(-45deg);
+    z-index: 5;
+}
+.floating {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 50px;
+    height: 50px;
+    color: var(--gold-accent);
+    opacity: 0.7;
+    z-index: 5;
+
+    /* Tilt plane upward */
+    transform: rotate(-25deg);
+
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(-25deg);
+    }
+    50% {
+        transform: translateY(-25px) rotate(-20deg);
+    }
+}
+
+/* ---------------------------------------- */
+/* CIRCLE + IMAGE (The New UI) */
+/* ---------------------------------------- */
+.hero-center {
+    flex: 0.55;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    /* Space between circle and list */
+    justify-content: flex-end;
+}
+
+/* Main elegant circular frame */
+.travel-circle {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    position: relative;
+
+    /* Main inner ring */
+    border: 2px solid rgba(245, 225, 164, 0.85);
+
+    /* Subtle glow */
+    box-shadow: 0 0 25px rgba(245, 225, 164, 0.25);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding-top: 35px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+
+.travel-circle::before {
+    content: "";
+    position: absolute;
+    inset: -15px; 
+    border-radius: 50%;
+    border: 2px solid rgba(245, 225, 164, 0.35);
+    box-shadow: 0 0 18px rgba(245, 225, 164, 0.2);
+}
+
+
+
+/* Title (AI Suggestion text) */
+.circle-title {
+    color: var(--gold-accent);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+/* Image container */
+.circle-image-box {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+/* ACTUAL IMAGE STYLES */
+.circle-image-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Location text */
+.circle-location {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* ---------------------------------------- */
+/* ITINERARY LIST */
+/* ---------------------------------------- */
+.itinerary-clean {
+    font-size: 15px;
+    line-height: 2.0;
+    padding-bottom: 20px;
+    align-self: flex-start;
+    /* Align list to the top */
+    padding-top: 10px;
+     margin-left: -20px;
+ position: relative;
+    right:30px;
+}
+
+.itinerary-clean ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.itinerary-clean li {
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    margin-bottom: 5px;
+    /* Added space between list items */
+}
+
+.itinerary-clean li span {
+    color: var(--gold-accent);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.itinerary-clean li.active {
+    color: white;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 12px;
+    border-radius: 4px;
+    border-left: 3px solid var(--gold-accent);
+}
+
+.itinerary-header {
+    font-size: 14px;
+    position: relative;
+    margin-top:29px;
+    color: var(--gold-accent);
+}
+
+/* ---------------------------------------- */
+/* FLOATING ICON */
+/* ---------------------------------------- */
+.plane-icon.top-left {
+    position: absolute;
+    top: 18%;
+    left: 8%;
+    width: 35px;
+    height: 35px;
+    color: var(--gold-accent);
+    opacity: 0.6;
+    transform: rotate(-45deg);
+    z-index: 5;
+}
+
+/* Added for responsiveness */
+@media (max-width: 1024px) {
+    .hero-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-center {
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 50px;
+        align-self: center;
+    }
+
+    .travel-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .itinerary-clean {
+        padding-top: 30px;
+        align-self: center;
+    }
+}
+
+.user-auth-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.welcome-text {
+  font-weight: 500;
+  color: #222;
+}
+
+.logout-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: #ff4d4d;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background-color: #e60000;
+}
+/* AUTH CONTAINER */
+.veyora-auth {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 20px;
+}
+
+/* HELLO TEXT */
+.veyora-greeting {
+  font-size: 15px;
+  font-weight: 500;
+  color: #e8d7a7; /* soft gold */
+  letter-spacing: 0.3px;
+  opacity: 0.95;
+}
+
+.veyora-greeting strong {
+  font-weight: 600;
+  color: #f5d99b; /* brighter gold */
+}
+
+/* LOGOUT BUTTON */
+.veyora-logout {
+  padding: 7px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px; /* luxury pill */
+  border: 1px solid rgba(245, 217, 155, 0.35);
+  background: linear-gradient(
+    135deg,
+    rgba(245, 217, 155, 0.9),
+    rgba(202, 165, 93, 0.95)
+  );
+  color: #0c0f1a;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* HOVER EFFECT */
+.veyora-logout:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(245, 217, 155, 0.35);
+  opacity: 0.95;
+}
