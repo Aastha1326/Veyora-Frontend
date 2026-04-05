@@ -7,7 +7,7 @@ This repository contains the **frontend** of the application.
 ---
 
 ## 🚀 Live Demo
-👉 https://cra.link/deployment
+👉 (https://veyora-frontend-project2.onrender.com)
 
 ---
 
