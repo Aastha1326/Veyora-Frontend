@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./dest_next.css";
 import Navbar from './Navbar';
+import BASE_URL from "./config";
 
 function Dest_next() {
   const location = useLocation();
@@ -29,7 +30,7 @@ function Dest_next() {
 
     try {
       const res = await axios.post(
-        "http://localhost:3001/api/ai/generate-itinerary",
+        `$BASE URL}{/api/ai/generate-itinerary`,
         { destination }
       );
 

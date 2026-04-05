@@ -3,19 +3,16 @@ import axios from "axios";
 import "./Itinerary.css";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import BASE_URL from "./config";
 
-<<<<<<< HEAD
 import html2canvas from "html2canvas";  // For capturing the itinerary as an image
 import jsPDF from "jspdf";    // For generating a PDF from the captured image
 
-=======
->>>>>>> 3421dddeae64264ee251d649b44d86b3cacd80fd
 const Itinerary = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isGenerating, setIsGenerating] = useState(false);
 
-<<<<<<< HEAD
   const downloadPDF = async () => {
     const element = document.getElementById("itinerary-content");
     const noPdfElements = document.querySelectorAll(".no-pdf");
@@ -60,8 +57,6 @@ const Itinerary = () => {
     pdf.save(`Veyora_${data.tripOverview.destination}.pdf`);
   };
 
-=======
->>>>>>> 3421dddeae64264ee251d649b44d86b3cacd80fd
   // No auto API call on refresh
   useEffect(() => {
     // intentionally empty
@@ -75,7 +70,7 @@ const Itinerary = () => {
     setLoading(true);
 
     axios
-      .post("http://localhost:3001/api/itinerary/final-itinerary")
+      .post(`${BASE_URL}/api/itinerary/final-itinerary`)
       .then((res) => {
         setData(res.data);
         localStorage.setItem(
@@ -143,11 +138,7 @@ const Itinerary = () => {
     <>
       <Navbar />
 
-<<<<<<< HEAD
       <div id="itinerary-content" className="itinerary-container">
-=======
-      <div className="itinerary-container">
->>>>>>> 3421dddeae64264ee251d649b44d86b3cacd80fd
         
 
         {/* SUMMARY CARD */}
@@ -197,15 +188,11 @@ const Itinerary = () => {
         ))}
 
         {/* REGENERATE */}
-<<<<<<< HEAD
         <div className="save-section no-pdf">
           <button className="save-btn" onClick={downloadPDF}>
             📄 Download PDF
           </button>
         
-=======
-        <div className="save-section">
->>>>>>> 3421dddeae64264ee251d649b44d86b3cacd80fd
           <button
             className="save-btn"
             onClick={() => {
@@ -215,11 +202,7 @@ const Itinerary = () => {
           >
             🔄 Generate New Itinerary
           </button>
-<<<<<<< HEAD
        </div>
-=======
-        </div>
->>>>>>> 3421dddeae64264ee251d649b44d86b3cacd80fd
       </div>
     </>
   );

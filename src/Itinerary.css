@@ -508,7 +508,6 @@ body {
     transform: translateY(0);
   }
 }
-<<<<<<< HEAD
 
 /* 🔥 PDF MODE (clean readable version) */
 .pdf-mode {
@@ -552,5 +551,3 @@ body {
 .pdf-mode * {
   box-shadow: none !important;
 }
-=======
->>>>>>> 3421dddeae64264ee251d649b44d86b3cacd80fd

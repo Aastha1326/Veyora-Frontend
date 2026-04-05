@@ -3,6 +3,7 @@ import "./RegistrationPage.css";
 import { Link ,useNavigate} from "react-router-dom";
 import {useState} from 'react';
 import axios from 'axios';
+import BASE_URL from "./config";
 
 function Register() {
 
@@ -26,7 +27,7 @@ function Register() {
 
         e.preventDefault();
 
-        axios.post('http://localhost:3001/api/auth/register', formData)
+        axios.post(`${BASE_URL}/api/auth/register`, formData)
         .then((response)=>{
             alert("Registration Successful!");
             navigate('/login');

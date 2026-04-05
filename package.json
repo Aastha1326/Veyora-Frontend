@@ -9,13 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.13.2",
     "cors": "^2.8.5",
-    "express": "^5.2.1",
-<<<<<<< HEAD
-    "html2canvas": "^1.4.1",
-    "jspdf": "^4.2.1",
-=======
->>>>>>> 3421dddeae64264ee251d649b44d86b3cacd80fd
-    "mongoose": "^9.0.0",
+    "express": "^5.2.1",    "mongoose": "^9.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
