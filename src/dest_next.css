@@ -1,0 +1,365 @@
+:root {
+  --bg-dark: #0c0f17;
+  --card-dark: #121620;
+  --gold: #d8c27a;
+  --text-light: #f5e1a4;
+  --text-muted: rgba(255,255,255,0.65);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg-dark);
+}
+
+.veyora-itinerary {
+  padding: 40px 20px;
+  color: var(--text-light);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+}
+
+.header p {
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+.day-card {
+  background: var(--card-dark);
+  border-radius: 18px;
+  padding: 32px;
+  margin-bottom: 50px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+.day-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.day-title h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold);
+}
+
+.day-title span {
+  color: var(--text-muted);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.slot {
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.slot img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+.slot h3 {
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.slot p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.notes {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(216,194,122,0.25);
+}
+
+.note {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.note strong {
+  color: var(--gold);
+}
+
+.summary {
+  text-align: center;
+  margin-top: 60px;
+  color: var(--text-muted);
+}
+
+.summary h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--text-light);
+}
+
+/* FULL PAGE CENTER */
+.loader-wrapper {
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at top, #121620, #0c0f17);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CARD */
+.loader-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 40px 50px;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(14px);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* HEADING */
+.loader-card h2 {
+  font-family: "Playfair Display", serif;
+  color: #f5e1a4;
+  font-size: 26px;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+/* SUBTEXT */
+.loader-card p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* SPINNER */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top: 3px solid #d8c27a;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 1.2s linear infinite;
+}
+
+/* ANIMATIONS */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Full screen loading */
+.loading-screen {
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(
+    circle at top,
+    #0c0f17,
+    #06070c
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glass-like loading card */
+.loading-box {
+  text-align: center;
+  padding: 50px 60px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Luxury spinner */
+.spinner {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 25px;
+  border: 3px solid rgba(216, 194, 122, 0.2);
+  border-top: 3px solid #d8c27a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Headline */
+.loading-box h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #f5e1a4;
+  margin-bottom: 8px;
+  letter-spacing: 0.4px;
+}
+
+/* Subtext */
+.loading-box p {
+  font-size: 14px;
+  color: rgba(245, 225, 164, 0.7);
+  letter-spacing: 0.3px;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Activity bullet list */
+.activity-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.activity-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 14.5px;
+  color: rgba(245, 225, 164, 0.9);
+}
+
+/* Golden dot */
+.activity-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #d8c27a;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.activity-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.activity-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 14.5px;
+  color: rgba(245, 225, 164, 0.9);
+}
+
+.activity-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #d8c27a;
+  font-size: 18px;
+}
+
+
+.regenerate-box {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.regenerate-btn {
+  background: transparent;
+  border: 1px solid #d8c27a;
+  color: #d8c27a;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.regenerate-btn:hover {
+  background: rgba(216, 194, 122, 0.1);
+}
+
+/* LUXURY GENERATE BUTTON */
+.generate-btn {
+  margin-top: 22px;
+  padding: 10px 26px;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(216, 194, 122, 0.6);
+
+  background: linear-gradient(
+    135deg,
+    rgba(216, 194, 122, 0.95),
+    rgba(180, 156, 88, 0.95)
+  );
+
+  color: #0c0f17;
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(216, 194, 122, 0.25),
+    inset 0 0 0 rgba(255, 255, 255, 0);
+
+  transition: all 0.25s ease;
+}
+
+/* HOVER EFFECT */
+.generate-btn:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 12px 35px rgba(216, 194, 122, 0.4),
+    inset 0 0 6px rgba(255, 255, 255, 0.25);
+}
+
+/* ACTIVE / CLICK */
+.generate-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 6px 18px rgba(216, 194, 122, 0.3);
+}

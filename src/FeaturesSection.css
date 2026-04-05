@@ -1,0 +1,108 @@
+/* Main Background */
+.up {
+    background: #0c0f17;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+.up h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #f5d36c;
+}
+
+.up h3 {
+    color: #d3d3d3;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+/* Card Container */
+.down {
+    background: #0c0f17;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;        /* 🔥 makes cards responsive */
+    gap: 35px;
+    padding: 50px 20px;
+}
+
+/* Cards */
+.card1, .card2, .card3 {
+    width: 100%;            /* 🔥 allow expansion */
+    max-width: 270px;       /* 🔥 keep desktop size */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    text-align: center;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.card1 h3, .card2 h3, .card3 h3 {
+    color: #f5d36cbe;
+}
+
+/* Hover Animation */
+.card1:hover, .card2:hover, .card3:hover {
+    transform: translateY(-8px);
+    border-color: #f5d36c;
+    box-shadow: 0 0 20px rgba(255, 215, 100, 0.3);
+}
+
+/* Icon */
+.feature-icon {
+    font-size: 45px;
+    color: #f5d36c;
+    margin-bottom: 20px;
+}
+
+/* Typography */
+.feature-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature-text {
+    color: #bbbbbb;
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+.feature-bottom {
+    color: #f5d36c;
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+/* ----------------------------------- */
+/* 📱 MOBILE RESPONSIVENESS FIXED */
+/* ----------------------------------- */
+
+@media (max-width: 600px) {
+    .up h1 {
+        font-size: 28px;
+    }
+    .up h3 {
+        font-size: 16px;
+    }
+
+    .card1, .card2, .card3 {
+        max-width: 330px;
+        padding: 25px;
+    }
+    .feature-icon {
+        font-size: 38px;
+    }
+    .feature-title {
+        font-size: 18px;
+    }
+    .feature-text {
+        font-size: 14px;
+    }
+}
