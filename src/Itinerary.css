@@ -28,7 +28,7 @@ body {
 /* ================= CONTAINER ================= */
 
 .itinerary-container {
-  padding: 60px 6%;
+  padding: 30px 16px;
   max-width: 1400px;
   margin: auto;
 }
@@ -550,4 +550,62 @@ body {
 /* Optional: remove shadows */
 .pdf-mode * {
   box-shadow: none !important;
+}
+
+@media (max-width: 768px) {
+
+  /* CONTAINER */
+  .itinerary-container {
+    padding: 20px 12px;
+  }
+
+  /* SUMMARY */
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* DAY CARD */
+  .day-card {
+    padding: 18px;
+  }
+
+  .day-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .day-header h3 {
+    font-size: 16px;
+  }
+
+  /* IMAGES */
+  .image-row {
+    grid-template-columns: 1fr;
+  }
+
+  .image-row img {
+    height: 180px;
+  }
+
+  /* TIME BLOCKS */
+  .time-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* EXTRAS */
+  .extras {
+    grid-template-columns: 1fr;
+  }
+
+  /* BUTTONS */
+  .save-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .save-btn {
+    width: 100%;
+  }
 }

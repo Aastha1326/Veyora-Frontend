@@ -63,9 +63,7 @@ body, html {
 .logo-text p{
     font-size:18px;
     position: absolute;
-    left:470px;
     color: #f5d79d;
-    top:55px;
 }
 .logo-text p:hover{
     text-decoration: underline;
@@ -258,3 +256,41 @@ body, html {
   color: white;
 }
 
+@media (max-width: 900px) {
+
+  .main-box {
+    flex-direction: column;   /* 🔥 STACK */
+    padding: 20px;
+  }
+
+  .left-box,
+  .right-box {
+    width: 100%;              /* 🔥 FULL WIDTH */
+    padding: 0;
+    border: none;
+  }
+
+  .right-box {
+    min-height: 200px;        /* 🔥 SMALLER IMAGE */
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .two-row,
+  .date-row {
+    flex-direction: column;   /* 🔥 STACK INPUTS */
+    gap: 10px;
+  }
+
+  .half {
+    width: 100%;
+  }
+  .submit-btn {
+    width: 100%;              /* 🔥 FULL WIDTH BUTTON */
+  }
+  .right-box {
+    display: none;  /* hide image on mobile */
+  }
+}

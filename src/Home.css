@@ -262,9 +262,6 @@ body {
     align-self: flex-start;
     /* Align list to the top */
     padding-top: 10px;
-     margin-left: -20px;
- position: relative;
-    right:30px;
 }
 
 .itinerary-clean ul {
@@ -320,30 +317,29 @@ body {
     transform: rotate(-45deg);
     z-index: 5;
 }
-
-/* Added for responsiveness */
 @media (max-width: 1024px) {
-    .hero-content-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
+  .hero-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .hero-center {
-        flex-direction: column;
-        justify-content: center;
-        margin-top: 50px;
-        align-self: center;
-    }
+  .hero-center {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
 
-    .travel-circle {
-        width: 300px;
-        height: 300px;
-    }
+  .travel-circle {
+    width: 300px;
+    height: 300px;
+  }
 
-    .itinerary-clean {
-        padding-top: 30px;
-        align-self: center;
-    }
+  .itinerary-clean {
+    margin: 0;
+    position: static;
+    text-align: center;
+  }
 }
 
 .user-auth-box {
@@ -414,4 +410,74 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(245, 217, 155, 0.35);
   opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left {
+    flex: 1;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    margin: 20px auto;
+  }
+
+  /* CENTER SECTION */
+  .hero-center {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 40px;
+  }
+
+  /* CIRCLE FIX */
+  .travel-circle {
+    width: 250px;
+    height: 250px;
+    padding-top: 20px;
+  }
+
+  .circle-image-box img {
+    height: 140px;
+  }
+
+  /* ITINERARY FIX (IMPORTANT) */
+  .itinerary-clean {
+    position: static;
+    margin: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .itinerary-header {
+    margin-top: 10px;
+  }
 }

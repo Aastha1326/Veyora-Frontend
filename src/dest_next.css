@@ -363,3 +363,79 @@ body {
   box-shadow:
     0 6px 18px rgba(216, 194, 122, 0.3);
 }
+
+
+.image-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.image-row img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .veyora-itinerary {
+    padding: 20px 12px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .header p {
+    font-size: 13px;
+  }
+
+  .day-card {
+    padding: 18px;
+    margin-bottom: 30px;
+  }
+
+  .day-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .image-row {
+    flex-direction: column;
+  }
+
+  .image-row img {
+    height: 180px;
+  }
+
+  .slot {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .loading-box {
+    padding: 30px 20px;
+  }
+
+  .loading-box h2 {
+    font-size: 18px;
+  }
+
+  .generate-btn {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+}

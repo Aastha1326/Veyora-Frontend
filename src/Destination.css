@@ -37,18 +37,29 @@
     margin-top: 30px;
     display: grid;
     gap: 25px;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    /* Perfect responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .destination-card {
     background: #1e1e1e;
     padding: 15px;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
 }
 
 .destination-card img {
     width: 100%;
-    height: 300px;
+    height: 220px;   /* reduced */
     object-fit: cover;
     border-radius: 10px;
 }
@@ -80,28 +91,12 @@
         padding: 25px 15px;
     }
 
+    .destination-card img {
+        height: 180px;
+    }
+
     .category-btn {
-        padding: 8px 14px;
-        font-size: 13px;
-    }
-
-    .destination-card img {
-        height: 200px;
-    }
-
-    .itinerary-btn {
-        font-size: 13px;
         padding: 8px 12px;
-    }
-}
-
-/* Medium Mobiles (≤ 768px) */
-@media (max-width: 768px) {
-    .destination-grid {
-        grid-template-columns: 1fr; /* One card per row */
-    }
-
-    .destination-card img {
-        height: 230px;
+        font-size: 12px;
     }
 }

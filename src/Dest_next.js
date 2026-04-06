@@ -30,7 +30,7 @@ function Dest_next() {
 
     try {
       const res = await axios.post(
-        `$BASE URL}{/api/ai/generate-itinerary`,
+        `${BASE_URL}/api/ai/generate-itinerary`,
         { destination }
       );
 
