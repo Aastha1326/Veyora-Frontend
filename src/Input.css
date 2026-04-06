@@ -276,21 +276,34 @@ body, html {
   }
 }
 
+
 @media (max-width: 768px) {
+
+  .main-box {
+    flex-direction: column !important;
+  }
+
+  .left-box,
+  .right-box {
+    width: 100% !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  .right-box {
+    display: none !important;   /* 🔥 BEST FIX */
+  }
 
   .two-row,
   .date-row {
-    flex-direction: column;   /* 🔥 STACK INPUTS */
-    gap: 10px;
+    flex-direction: column !important;
   }
 
   .half {
-    width: 100%;
+    width: 100% !important;
   }
+
   .submit-btn {
-    width: 100%;              /* 🔥 FULL WIDTH BUTTON */
-  }
-  .right-box {
-    display: none;  /* hide image on mobile */
+    width: 100%;
   }
 }
