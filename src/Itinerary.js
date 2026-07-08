@@ -191,7 +191,7 @@ const Itinerary = () => {
 
         {/* REGENERATE */}
         <div className="save-section no-pdf">
-          <button className="save-btn" onClick={downloadPDF}>   (/* this message is displayed while the itinerary is being generated, indicating to the user that the process may take some time. It adds a touch of personality and reassurance, letting the user know that their personalized itinerary is being crafted with care and attention to detail, which can help manage expectations during the loading period.*/)
+          <button className="save-btn" onClick={downloadPDF}>   {/* this message is displayed while the itinerary is being generated, indicating to the user that the process may take some time. It adds a touch of personality and reassurance, letting the user know that their personalized itinerary is being crafted with care and attention to detail, which can help manage expectations during the loading period.*/}
             📄 Download PDF
           </button>
         
