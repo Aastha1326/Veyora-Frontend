@@ -211,7 +211,7 @@ const handleLogin = async (e) => {
           <p>Welcome Back to Veyora</p>
 
 
-          <form className="loginForm" onSubmit={handleLogin}>    //when the form is submitted, it triggers the handleLogin function, which handles the authentication process by sending the login credentials to the backend API and managing the response accordingly (success or error).
+          <form className="loginForm" onSubmit={handleLogin}>    {/*when the form is submitted, it triggers the handleLogin function, which handles the authentication process by sending the login credentials to the backend API and managing the response accordingly (success or error).*/}
             <input type="text" name="email" placeholder="Email/Username" value={formData.email} onChange={handleChange} required />
             <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
             <button type="submit" className="btnLogin">Login</button>
