@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Link,useNavigate} from 'react-router-dom';
-import axios from "axios";
-import BASE_URL from "./config";
+import axios from "axios";   //axios is a popular JavaScript library used for making HTTP requests from the browser. In this code, it is used to send a POST request to the backend API for user authentication when the login form is submitted.
+import BASE_URL from "./config";   //BASE_URL is likely a constant defined in a separate config file that holds the base URL of the backend API. This allows for easier management of API endpoints and makes it easier to switch between different environments (e.g., development, staging, production) without changing the code in multiple places.
 
 function Login() {
 
@@ -18,7 +18,7 @@ function Login() {
       ...formData,
       [e.target.name]:e.target.value
     });
-  };
+  };    //this fucntion updates the formData state whenever the user types into the email or password input fields. It uses the name attribute of the input fields to determine which field is being updated and sets the corresponding value in the formData state.
 
 const handleLogin = async (e) => {
   e.preventDefault();
@@ -30,14 +30,14 @@ const handleLogin = async (e) => {
     const res = await axios.post(
       `${BASE_URL}/api/auth/login`,
       formData
-    );
+    );     //sends a POST request to the backend API at the specified endpoint (/api/auth/login) with the formData (which contains the email and password entered by the user) as the request body. The response from the server is stored in the res variable.
 
-    // 🛡️ DEFENSIVE CHECK
+    //  DEFENSIVE CHECK
     if (!res.data?.token || !res.data?.user) {
       throw new Error("Invalid login response");
-    }
+    }     //it will check if the response from the server contains both a token and user data. If either of these is missing, it throws an error, which will be caught in the catch block, leading to the display of an error message to the user. This is a defensive programming practice to ensure that the application can handle unexpected responses gracefully.
 
-    // ✅ REAL SUCCESS
+    // REAL SUCCESS
     localStorage.setItem("token", res.data.token);
     localStorage.setItem("user", JSON.stringify(res.data.user));
 
@@ -48,7 +48,7 @@ const handleLogin = async (e) => {
     }, 1200);
 
   } catch (err) {
-    // ❌ FAILURE PATH
+    //  FAILURE PATH
     localStorage.removeItem("token");
     localStorage.removeItem("user");
 
@@ -211,7 +211,7 @@ const handleLogin = async (e) => {
           <p>Welcome Back to Veyora</p>
 
 
-          <form className="loginForm" onSubmit={handleLogin}>
+          <form className="loginForm" onSubmit={handleLogin}>    //when the form is submitted, it triggers the handleLogin function, which handles the authentication process by sending the login credentials to the backend API and managing the response accordingly (success or error).
             <input type="text" name="email" placeholder="Email/Username" value={formData.email} onChange={handleChange} required />
             <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
             <button type="submit" className="btnLogin">Login</button>
@@ -240,7 +240,7 @@ const handleLogin = async (e) => {
           
 
           <div className="registerText">
-            Don&apos;t have an account? <Link to="/register">Register</Link>
+            Don&apos;t have an account? <Link to="/register">Register</Link>    {/*provides a link to the registration page for users who do not have an account, allowing them to create one before attempting to log in.*/}
           </div>
 
         </div>

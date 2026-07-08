@@ -1,4 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
+//this file is used to create a navigation bar component for the Veyora application. It includes links to the home page and login/logout functionality based on the user's authentication status. The component uses React Router for navigation and manages user state by checking local storage for a stored user object. It also provides a logout function that clears the user's token and information from local storage, navigates back to the home page, and reloads the window to reflect the logout state.
+
+import { Link, useNavigate } from "react-router-dom";  //react-router-dom is 
 import "./Navbar.css";
 
 function Navbar() {
